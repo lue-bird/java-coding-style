@@ -59,7 +59,7 @@ name
 public final
 class
 Example{
-    public static
+    static public
     void
     main(
         final String[]
@@ -90,7 +90,7 @@ Somehow this style is also saying: constants will be rare.
 
 ```java
 enum
-Fruit {
+Fruit{
     banana
     }
 
