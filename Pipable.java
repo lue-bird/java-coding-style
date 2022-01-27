@@ -1,11 +1,10 @@
-package util;
 import java.util.function.*;
 
 /**
  * from(x).ᐳ(f).eval() ist exactly the same as f(x)/f.apply(x).
  * 
- * By programming in the syle
- * Values ᐳ external static functions ᐳ other transformations
+ * By programming in the style
+ * Data ᐳ (external) static functions ᐳ other transformations
  * these transforming functions now become similar to normal methods
  * 
  * before:
