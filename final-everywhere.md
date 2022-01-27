@@ -27,10 +27,12 @@ To remind others and future you, add `final` to
       - probably most non-`abstract` methods in an extendable `class`
   - all arguments, except in
     ```java
+    static public final
     Function<Person, String>
-    greet = person ->
+    greet = person->
         "Hi, " + person.value
         ;
+    static public
     String
     greet(Person person){return
         "Hi, " + person.value
