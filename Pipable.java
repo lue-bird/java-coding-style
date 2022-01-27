@@ -8,12 +8,12 @@ import java.util.function.*;
  * these transforming functions now become similar to normal methods
  * 
  * before:
- * sanitize = text->
+ * sanitize= text->
  *     StringUtil.toInt(StringUtil.trim(text))
  *     ;
  * 
  * after:
- * sanitize = text->
+ * sanitize= text->
  *     from(text).
  *         ᐳ(StringUtil.trim)
  *         ᐳ(StringUtil.toInt)
@@ -59,7 +59,7 @@ Pipable<value>
         consoom
         ){return ()->{
         final value
-        evaluated = this.eval();
+        evaluated= this.eval();
         consoom.accept(evaluated);
         return
         evaluated

@@ -56,14 +56,14 @@ Row{
     
     static public
     Function<List<Element>, Row>
-    row = elements->
+    row(){return elements->
         new Row(elements)
-        ;
+        ;}
     static public
     Function<Element[], Row>
-    row = elements->
+    row(){return elements->
         new Row(elements)
-        ;
+        ;}
     
     static public
     UnaryOperator<Row>
@@ -77,7 +77,7 @@ from(
     textInput,
     button
     ).
-    ᐳ(row).
+    ᐳ(row()).
     ᐳ(Row.spaced(20)).eval()
     ;
 ```

@@ -81,7 +81,7 @@ with an exception for
 
 ```java
 enum Fruit { BANANA }
-static final Fruit YELLOW_FRUIT = BANANA;
+static final Fruit YELLOW_FRUIT= BANANA;
 ```
 
 This is making constants unpleasant and slow to read
@@ -96,7 +96,7 @@ Fruit{
 
 static final
 Fruit
-yellowFruit = banana;
+yellowFruit= banana;
 ```
 
 ## 1-letter type variable names

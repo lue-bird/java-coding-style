@@ -10,7 +10,7 @@ Character{
 
 static
 Function<String, Character>
-characterToString= (final var character) ->{
+characterToString= (final var character)->{
     switch(character){
         case Birt:return
             "birt"
@@ -27,13 +27,13 @@ characterToString= (final var character) ->{
 ```java
 static
 Function<Character, String>
-characterToString = character ->
+characterToString= character->
     switch(character){
-        case Birt ->
+        case Birt->
             "birt"
-        case Orangloo ->
+        case Orangloo->
             "orangloo"
-        case Iquipy ->
+        case Iquipy->
             "iquipy"
         }
     ;
@@ -79,13 +79,13 @@ Expression{
 
     static public
     Function<Expression, Double>
-    evaluate(){return (final var expression) ->{
+    evaluate(){return (final var expression)->{
         if(expression instanceof Number)return
             ((Number)expression).value
             ;
         else if(expression instanceof Operation){
             final Operation
-            operation = (Operation)expression;
+            operation= (Operation)expression;
             return
             operation.apply(
                 evaluate(operation.left),
@@ -119,7 +119,7 @@ Expression
     
     static public
     Function<Expression, Double>
-    evaluate = (final var expression) ->{
+    evaluate= (final var expression)->{
         if(expression instanceof Number number)return
             number.value
             ;
@@ -171,11 +171,11 @@ Expression
     
     static public
     Function<Expression, Double>
-    evaluate =
+    evaluate=
         where(
-            (Number number) ->
+            (Number number)->
                 number.value,
-            (Operation operation) ->
+            (Operation operation)->
                 operation.apply(
                     evaluate(operation.left()),
                     evaluate(operation.right())
@@ -198,7 +198,7 @@ Expression
     where(
         Function<Number, result> isNumber,
         Function<Operation, result> isOperation
-        ){return expression ->
+        ){return expression->
         expression.match().where(isNumber, isOperation)
         ;}
 
@@ -216,7 +216,7 @@ Expression
         
         @Override protected
         Matchable
-        match(){return (isNumber, _isOperation) ->
+        match(){return (isNumber, _isOperation)->
             isNumber.apply(this)
             ;}
         }
@@ -235,7 +235,7 @@ Expression
         
         @Override protected
         Matchable
-        match(){return (_isNumber, isOperation) ->
+        match(){return (_isNumber, isOperation)->
             isOperation.apply(this)
             ;}
         ...
@@ -255,13 +255,13 @@ enum
 Character
     extends Matchable{
     
-    Birt((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo) ->
+    Birt((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo)->
         isBirt.apply(isBirt)
         ),
-    Orangloo((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo) ->
+    Orangloo((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo)->
         isOrangloo.apply(isOrangloo)
         ),
-    Iquipy((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo) ->
+    Iquipy((IsBirt isBirt, IsIquipy isIquipy, IsOrangloo isOrangloo)->
         isIquipy.apply(isIquipy)
         );
     
@@ -298,7 +298,7 @@ Character
         IsBirt<result> isBirt,
         IsIquipy<result> isIquipy,
         IsOrangloo<result> isOrangloo
-        ){return expression ->
+        ){return expression->
         expression.match().where(isBirt, isIquipy, isOrangloo)
         ;}
 
@@ -310,7 +310,7 @@ Character
         final Matchable
         match
         ){
-        this.match = match;
+        this.match= match;
         }
     }
 ```

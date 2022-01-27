@@ -29,7 +29,7 @@ Java by default means
     - all-caps:
       ```java
       enum Fruit { BANANA }
-      static final Fruit YELLOW_FRUIT = BANANA;
+      static final Fruit YELLOW_FRUIT= BANANA;
       ```
     - 1-letter type variable names:
       ```java

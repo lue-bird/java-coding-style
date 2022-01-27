@@ -7,18 +7,18 @@ Basically everything is mutable and extensible by default
 class A{
     // ↓ can be mutated
     Consumer<Stuff>
-    take = stuff ->{
+    take= stuff->{
         // ↓ stuff can be mutated
-        stuff = null;
+        stuff= null;
         // ↓ can be mutated
         Stuff
-        otherStuff = stuff;
+        otherStuff= stuff;
         };
     
     // ↓ can be mutated
     static public
     String
-    projectName = "hi";
+    projectName= "hi";
     }
 ```
 
@@ -29,7 +29,7 @@ To remind others and future you, add `final` to
     ```java
     static public final
     Function<Person, String>
-    greet = person->
+    greet= person->
         "Hi, " + person.value
         ;
     static public
