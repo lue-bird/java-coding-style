@@ -48,7 +48,7 @@ Personally, I use
 
 ```java
 static > @Override|@FunctionalInterface > visibility > final|sealed
-type|class|interface|abstract class|enum|module
+record|class|interface|abstract class|enum|module
 name
     extends
     implements
@@ -80,8 +80,13 @@ with an exception for
 ## all-caps
 
 ```java
-enum Fruit { BANANA }
-static final Fruit YELLOW_FRUIT= BANANA;
+enum
+Fruit{
+    BANANA
+    }
+static public final
+Fruit
+YELLOW_FRUIT= BANANA;
 ```
 
 This is making constants unpleasant and slow to read
@@ -94,7 +99,7 @@ Fruit{
     banana
     }
 
-static final
+static public final
 Fruit
 yellowFruit= banana;
 ```
@@ -133,13 +138,29 @@ map2(Function<aIn, aIn, out> ..., ...<aIn> ..., ...<bIn> ...)
 
 ## other personal preferences
 
-```java
-Structure{
+- `return`, `->`, `=`, `{`, `(`, `<`, `[` aren't separated with a ` `
+- closing brackets are always indented as much as the members
 
-    members;
-    function(
+```java
+Data<
+    generic,
+    aspect
+    >{
+    
+    aspect;
+
+    transformation= data->
+        ...
+        ;
+    
+    <
+        generic,
+        aspect
+        >
+    genericTransformation(
         arguments
-        )
+        ){return
+        ...
+        ;}
     }
 ```
-Closing brackets are always indented as much as the members.
