@@ -2,17 +2,18 @@ package util;
 import java.util.function.*;
 
 /**
- * from(x).ᐳ(f).eval() ist exakt das selbe wie f(x)/f.apply(x).
+ * from(x).ᐳ(f).eval() ist exactly the same as f(x)/f.apply(x).
  * 
- * Durch diesen Stil zu Programmieren werden
- * externe static Funktionen, die Werte transformieren, auf eine Ebene mit Methoden gestellt
+ * By programming in the syle
+ * Values ᐳ external static functions ᐳ other transformations
+ * these transforming functions now become similar to normal methods
  * 
- * vorher:
+ * before:
  * sanitize = text->
  *     StringUtil.toInt(StringUtil.trim(text))
  *     ;
  * 
- * nachher:
+ * after:
  * sanitize = text->
  *     from(text).
  *         ᐳ(StringUtil.trim)
@@ -33,7 +34,7 @@ Pipable<value>
     from(Supplier<initialValue> supplyInitial){return ()->
         supplyInitial.get()
         ;}
-    // zum Beispiel
+    // for example
     // from(1.0, 2.0, 3.0) → Pipable<Double[]>
     static public
     <initialElement> Pipable<initialElement[]>
@@ -50,8 +51,8 @@ Pipable<value>
         apply.apply(this.eval())
         ;}
     
-    // Verändert den aktuellen Wert, ohne einen neuen Wert zurückzugeben
-    // void set(...) Funktionen sind ein klassisches Beispiel
+    // changes the current value without returning a new value
+    // void set(...) functions are a classical example
     public default
     Pipable<value>
     ᐳdo(
