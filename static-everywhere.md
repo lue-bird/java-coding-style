@@ -1,4 +1,4 @@
-## `static` everywhere*
+## `static` functions
 
 classes have a public 0-argument constructor by default
 
